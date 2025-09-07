@@ -1,0 +1,828 @@
+/* Added custom animations for smooth transitions and effects */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Utility classes for animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-fade-scale {
+  animation: fadeInScale 0.8s ease-out;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Added customer review specific animations */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes bounce-subtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes border-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Utility classes for new animations */
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+.animate-border-glow {
+  background-size: 200% 200%;
+  animation: border-glow 3s ease infinite;
+}
+
+/* Added project card specific animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes rotate-subtle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scale-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Utility classes for project animations */
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.animate-rotate-subtle {
+  animation: rotate-subtle 20s linear infinite;
+}
+
+.animate-scale-pulse {
+  animation: scale-pulse 2s ease-in-out infinite;
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hover-glow-intense {
+  transition: all 0.3s ease;
+}
+
+.hover-glow-intense:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2), 0 0 60px rgba(59, 130, 246, 0.1);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.hover-rotate-3d {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.hover-rotate-3d:hover {
+  transform: rotateY(10deg) rotateX(5deg) translateZ(20px);
+}
+
+.hover-magnetic {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-magnetic:hover {
+  transform: translate(2px, -2px);
+}
+
+/* Enhanced project card hover effects */
+.project-hover-lift {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-hover-lift:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(59, 130, 246, 0.15);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+/* Loading states */
+.loading-skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Staggered animation delays for project grids */
+.project-stagger-1 {
+  animation-delay: 0.1s;
+}
+.project-stagger-2 {
+  animation-delay: 0.2s;
+}
+.project-stagger-3 {
+  animation-delay: 0.3s;
+}
+.project-stagger-4 {
+  animation-delay: 0.4s;
+}
+.project-stagger-5 {
+  animation-delay: 0.5s;
+}
+.project-stagger-6 {
+  animation-delay: 0.6s;
+}
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+.stagger-6 {
+  animation-delay: 0.6s;
+}
+.stagger-7 {
+  animation-delay: 0.7s;
+}
+.stagger-8 {
+  animation-delay: 0.8s;
+}
+
+/* New cool animations for enhanced visual effects */
+@keyframes pulse-text {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.6), 0 0 25px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flip-in {
+  from {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes elastic-bounce {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  80% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes neon-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  50% {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor, 0 0 40px currentColor;
+  }
+}
+
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-5px) translateX(-3px);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-15px) translateX(8px);
+    opacity: 0.9;
+  }
+}
+
+/* Adding new advanced animations for enhanced visual appeal */
+@keyframes morphing-blob {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% {
+    border-radius: 50% 60% 30% 60% / 60% 40% 60% 30%;
+    transform: rotate(180deg) scale(0.9);
+  }
+  75% {
+    border-radius: 60% 40% 60% 30% / 30% 70% 40% 60%;
+    transform: rotate(270deg) scale(1.05);
+  }
+}
+
+@keyframes liquid-wave {
+  0%,
+  100% {
+    clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes holographic-shift {
+  0% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    background-position: 100% 50%;
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    background-position: 100% 100%;
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    background-position: 0% 100%;
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes glitch-effect {
+  0%,
+  100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  70% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(360deg);
+  }
+  90% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+}
+
+@keyframes cyber-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.3), 0 0 15px rgba(0, 255, 255, 0.2), inset
+      0 0 5px rgba(0, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.4), inset
+      0 0 10px rgba(0, 255, 255, 0.2);
+  }
+}
+
+@keyframes data-stream {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes quantum-flicker {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.7;
+    transform: scale(1.05) rotate(1deg);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(0.95) rotate(-1deg);
+  }
+  75% {
+    opacity: 0.8;
+    transform: scale(1.02) rotate(0.5deg);
+  }
+}
+
+@keyframes neural-network {
+  0% {
+    stroke-dasharray: 0 100;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 50 50;
+    stroke-dashoffset: -25;
+  }
+  100% {
+    stroke-dasharray: 100 0;
+    stroke-dashoffset: -50;
+  }
+}
+
+@keyframes energy-orb {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6), 0 0 40px rgba(138, 43, 226, 0.4), 0 0 60px rgba(138, 43, 226, 0.2);
+  }
+  33% {
+    transform: scale(1.1) rotate(120deg);
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.6), 0 0 50px rgba(0, 191, 255, 0.4), 0 0 75px rgba(0, 191, 255, 0.2);
+  }
+  66% {
+    transform: scale(0.9) rotate(240deg);
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.6), 0 0 60px rgba(255, 20, 147, 0.4), 0 0 90px rgba(255, 20, 147, 0.2);
+  }
+}
+
+/* New utility classes for advanced animations */
+.animate-pulse-text {
+  animation: pulse-text 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+.animate-typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 3s steps(40, end);
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
+}
+
+.animate-zoom-in {
+  animation: zoom-in 0.6s ease-out forwards;
+}
+
+.animate-flip-in {
+  animation: flip-in 0.8s ease-out forwards;
+}
+
+.animate-elastic-bounce {
+  animation: elastic-bounce 0.6s ease-out;
+}
+
+.animate-neon-glow {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+.animate-particle-float {
+  animation: particle-float 4s ease-in-out infinite;
+}
+
+/* Adding utility classes for new advanced animations */
+.animate-morphing-blob {
+  animation: morphing-blob 8s ease-in-out infinite;
+}
+
+.animate-liquid-wave {
+  animation: liquid-wave 3s ease-in-out infinite;
+}
+
+.animate-holographic-shift {
+  background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b);
+  background-size: 300% 300%;
+  animation: holographic-shift 4s ease-in-out infinite;
+}
+
+.animate-matrix-rain {
+  animation: matrix-rain 2s linear infinite;
+}
+
+.animate-glitch-effect {
+  animation: glitch-effect 0.3s ease-in-out infinite;
+}
+
+.animate-cyber-pulse {
+  animation: cyber-pulse 2s ease-in-out infinite;
+}
+
+.animate-data-stream {
+  animation: data-stream 3s ease-in-out infinite;
+}
+
+.animate-quantum-flicker {
+  animation: quantum-flicker 1.5s ease-in-out infinite;
+}
+
+.animate-neural-network {
+  animation: neural-network 2s ease-in-out infinite;
+}
+
+.animate-energy-orb {
+  animation: energy-orb 4s ease-in-out infinite;
+}
+
+/* Enhanced hover effects with more dramatic transformations */
+.hover-3d-flip {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.hover-3d-flip:hover {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+.hover-quantum-shift {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hover-quantum-shift:hover {
+  transform: translateY(-10px) rotateX(15deg) rotateY(5deg);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3), 0 0 20px rgba(138, 43, 226, 0.2);
+}
+
+.hover-energy-burst {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hover-energy-burst::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+  transition: all 0.5s ease;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.hover-energy-burst:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.hover-energy-burst:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+}
+
+/* Responsive animation controls for better performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Performance optimizations for animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
