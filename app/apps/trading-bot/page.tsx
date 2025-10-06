@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import Link from "link"
+import Link from "next/link"
 import { ArrowLeft, TrendingUp, Activity, DollarSign, BarChart3, Settings } from "lucide-react"
 
 export default function TradingBot() {
