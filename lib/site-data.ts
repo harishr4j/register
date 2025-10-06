@@ -92,7 +92,7 @@ export const siteData: SiteData = {
       description:
         "A comprehensive task management application built with React and TypeScript. Features drag-and-drop functionality, real-time updates, and team collaboration tools.",
       tags: ["React", "TypeScript", "Drag & Drop", "Real-time"],
-      link: "https://react-task-manager-demo.vercel.app",
+      link: "https://task-flow-by-harish.base44.app/",
       repo: "https://github.com/harishraj/react-task-manager",
       image: "/react-task-manager.jpg",
     },
@@ -101,7 +101,6 @@ export const siteData: SiteData = {
       description:
         "Modern blog platform with server-side rendering, markdown support, and SEO optimization. Built with Next.js 14 and Tailwind CSS.",
       tags: ["Next.js", "SSR", "Markdown", "SEO", "Tailwind"],
-      link: "https://nextjs-blog-platform.vercel.app",
       repo: "https://github.com/harishraj/nextjs-blog",
       image: "/nextjs-blog-platform.jpg",
     },
@@ -110,7 +109,6 @@ export const siteData: SiteData = {
       description:
         "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with React and Node.js.",
       tags: ["React", "Node.js", "Stripe", "MongoDB", "Admin Panel"],
-      link: "https://ecommerce-store-demo.vercel.app",
       repo: "https://github.com/harishraj/ecommerce-store",
       image: "/ecommerce-store.jpg",
     },
@@ -119,7 +117,7 @@ export const siteData: SiteData = {
       description:
         "Professional trading platform with real-time market data, advanced charting, order management, and portfolio analytics. Built with React and WebSocket integration.",
       tags: ["React", "Trading", "WebSocket", "Charts", "Finance"],
-      link: "https://trading-platform-demo.vercel.app",
+      link: "https://market-pro-by-harish.base44.app/",
       repo: "https://github.com/harishraj/trading-platform",
       image: "/advanced-trading-platform.jpg",
     },
@@ -128,7 +126,6 @@ export const siteData: SiteData = {
       description:
         "Automated trading system with customizable strategies, backtesting engine, and risk management. Built with Python backend and React dashboard.",
       tags: ["Python", "React", "Trading Bot", "Algorithm", "API"],
-      link: "https://trading-bot-demo.vercel.app",
       repo: "https://github.com/harishraj/algo-trading-bot",
       image: "/algorithmic-trading-bot.jpg",
     },
@@ -137,7 +134,7 @@ export const siteData: SiteData = {
       description:
         "Comprehensive market analysis tool with technical indicators, sentiment analysis, and automated alerts. Features real-time data visualization.",
       tags: ["React", "D3.js", "Market Analysis", "Trading", "Data Viz"],
-      link: "https://market-analysis-demo.vercel.app",
+      link: "https://market-pro-by-harish.base44.app/",
       repo: "https://github.com/harishraj/market-analysis",
       image: "/market-analysis-dashboard.jpg",
     },
@@ -146,7 +143,6 @@ export const siteData: SiteData = {
       description:
         "Browser-based video editing platform with timeline editing, effects, transitions, and export functionality. Built with WebGL and React.",
       tags: ["React", "WebGL", "Video Editing", "FFmpeg", "Canvas"],
-      link: "https://video-editor-demo.vercel.app",
       repo: "https://github.com/harishraj/web-video-editor",
       image: "/web-video-editor.jpg",
     },
@@ -155,7 +151,6 @@ export const siteData: SiteData = {
       description:
         "All-in-one content creation platform for social media with templates, scheduling, analytics, and collaboration tools for creators.",
       tags: ["React", "Content Creation", "Social Media", "Templates", "Analytics"],
-      link: "https://content-studio-demo.vercel.app",
       repo: "https://github.com/harishraj/content-studio",
       image: "/content-creation-studio.jpg",
     },
@@ -164,7 +159,6 @@ export const siteData: SiteData = {
       description:
         "Specialized tool for creating Instagram reels and short-form content with AI-powered editing suggestions and trending templates.",
       tags: ["React", "AI", "Video Editing", "Instagram", "Templates"],
-      link: "https://reel-maker-demo.vercel.app",
       repo: "https://github.com/harishraj/reel-maker-pro",
       image: "/reel-maker-pro.jpg",
     },
@@ -173,7 +167,6 @@ export const siteData: SiteData = {
       description:
         "Responsive portfolio website with smooth animations, dark/light mode toggle, and contact form. Built with Next.js and Framer Motion.",
       tags: ["Next.js", "Framer Motion", "Responsive", "Animations"],
-      link: "https://portfolio-website-demo.vercel.app",
       repo: "https://github.com/harishraj/portfolio-website",
       image: "/portfolio-website.jpg",
     },
@@ -182,7 +175,6 @@ export const siteData: SiteData = {
       description:
         "Real-time weather application with location-based forecasts, interactive maps, and weather alerts. Built with React and OpenWeather API.",
       tags: ["React", "API Integration", "Geolocation", "Charts"],
-      link: "https://weather-dashboard-demo.vercel.app",
       repo: "https://github.com/harishraj/weather-dashboard",
       image: "/weather-app.jpg",
     },
@@ -191,7 +183,6 @@ export const siteData: SiteData = {
       description:
         "WebSocket-based chat application with rooms, file sharing, and emoji support. Built with React, Socket.io, and Express.js.",
       tags: ["React", "Socket.io", "WebSocket", "Real-time", "Express"],
-      link: "https://chat-app-demo.vercel.app",
       repo: "https://github.com/harishraj/realtime-chat",
       image: "/chat-application.jpg",
     },
