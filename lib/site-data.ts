@@ -175,6 +175,7 @@ export const siteData: SiteData = {
       description:
         "Real-time weather application with location-based forecasts, interactive maps, and weather alerts. Built with React and OpenWeather API.",
       tags: ["React", "API Integration", "Geolocation", "Charts"],
+      link: "https://aura-weather-by-harish.base44.app/",
       repo: "https://github.com/harishraj/weather-dashboard",
       image: "/weather-app.jpg",
     },
