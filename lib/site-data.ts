@@ -101,6 +101,7 @@ export const siteData: SiteData = {
       description:
         "Modern blog platform with server-side rendering, markdown support, and SEO optimization. Built with Next.js 14 and Tailwind CSS.",
       tags: ["Next.js", "SSR", "Markdown", "SEO", "Tailwind"],
+      link: "https://blog-hub-by-harish.base44.app/",
       repo: "https://github.com/harishraj/nextjs-blog",
       image: "/nextjs-blog-platform.jpg",
     },
