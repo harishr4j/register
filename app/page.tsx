@@ -9,11 +9,17 @@ const toolbox = ["Next.js", "React", "TypeScript", "Tailwind", "Node.js", "Tradi
 export default function HomePage() {
   const [paletteOpen, setPaletteOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [loadingProgress, setLoadingProgress] = useState(0)
   const [activeSection, setActiveSection] = useState("top")
   const [cursor, setCursor] = useState({ x: -100, y: -100 })
 
   useEffect(() => {
-    const loaderTimer = window.setTimeout(() => setIsLoading(false), 1400)
+    const loaderStartedAt = performance.now()
+    const progressTimer = window.setInterval(() => {
+      const elapsed = performance.now() - loaderStartedAt
+      setLoadingProgress(Math.min(100, Math.round((elapsed / 1400) * 100)))
+    }, 30)
+    const loaderTimer = window.setTimeout(() => { setLoadingProgress(100); setIsLoading(false) }, 1400)
     const sections = ["top", "about", "work", "contact"]
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((entry) => entry.isIntersecting && setActiveSection(entry.target.id)),
@@ -27,7 +33,7 @@ export default function HomePage() {
     const handlePointerMove = (event: PointerEvent) => setCursor({ x: event.clientX, y: event.clientY })
     window.addEventListener("keydown", handleKeyDown)
     window.addEventListener("pointermove", handlePointerMove)
-    return () => { window.clearTimeout(loaderTimer); observer.disconnect(); window.removeEventListener("keydown", handleKeyDown); window.removeEventListener("pointermove", handlePointerMove) }
+    return () => { window.clearTimeout(loaderTimer); window.clearInterval(progressTimer); observer.disconnect(); window.removeEventListener("keydown", handleKeyDown); window.removeEventListener("pointermove", handlePointerMove) }
   }, [])
 
   const scrollTo = (id: string) => {
@@ -37,10 +43,12 @@ export default function HomePage() {
   return (
     <>
       <div className={`site-loader ${isLoading ? "is-visible" : "is-hidden"}`} aria-hidden={!isLoading}>
-        <div className="loader-topline"><span>B. HARISH RAJ</span><span>PORTFOLIO / 2026</span></div>
-        <div className="loader-center"><span className="loader-count">{isLoading ? "00" : "100"}</span><span className="loader-percent">%</span></div>
-        <div className="loader-bar"><span /></div>
-        <p>INITIALISING EXPERIENCE</p>
+        <div className="loader-topline"><span>© 2026 — B. HARISH RAJ</span><span>FINANCE × CODE</span></div>
+        <div className="loader-center" aria-label={`Loading ${loadingProgress}%`}>
+          <div className="loader-wordmark"><span>HARISH</span><strong style={{ clipPath: `inset(${100 - loadingProgress}% 0 0)` }}>HARISH</strong><span>RAJ</span><strong style={{ clipPath: `inset(${100 - loadingProgress}% 0 0)` }}>RAJ</strong></div>
+          <p className="loader-status"><i /> INITIALISING</p>
+        </div>
+        <div className="loader-progress"><span>{String(loadingProgress).padStart(2, "0")}%</span></div>
       </div>
       <main className="portfolio-shell">
       <span className="cursor-orb" style={{ transform: `translate3d(${cursor.x}px, ${cursor.y}px, 0)` }} aria-hidden="true" />
