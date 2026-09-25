@@ -17,9 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Portfolio - Full Stack Developer & Financial Analyst",
+  title: "B. Harish Raj — Finance × Code",
   description:
-    "Professional portfolio showcasing expertise in React, Next.js, TypeScript, trading platforms, and creative content. Experienced full-stack developer with financial analysis and video editing skills.",
+    "B. Harish Raj is a CA student and developer building at the intersection of finance, technology and creativity.",
   keywords: [
     "full stack developer",
     "react developer",
