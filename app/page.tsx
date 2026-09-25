@@ -8,10 +8,12 @@ const toolbox = ["Next.js", "React", "TypeScript", "Tailwind", "Node.js", "Tradi
 
 export default function HomePage() {
   const [paletteOpen, setPaletteOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [activeSection, setActiveSection] = useState("top")
   const [cursor, setCursor] = useState({ x: -100, y: -100 })
 
   useEffect(() => {
+    const loaderTimer = window.setTimeout(() => setIsLoading(false), 1400)
     const sections = ["top", "about", "work", "contact"]
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((entry) => entry.isIntersecting && setActiveSection(entry.target.id)),
@@ -25,7 +27,7 @@ export default function HomePage() {
     const handlePointerMove = (event: PointerEvent) => setCursor({ x: event.clientX, y: event.clientY })
     window.addEventListener("keydown", handleKeyDown)
     window.addEventListener("pointermove", handlePointerMove)
-    return () => { observer.disconnect(); window.removeEventListener("keydown", handleKeyDown); window.removeEventListener("pointermove", handlePointerMove) }
+    return () => { window.clearTimeout(loaderTimer); observer.disconnect(); window.removeEventListener("keydown", handleKeyDown); window.removeEventListener("pointermove", handlePointerMove) }
   }, [])
 
   const scrollTo = (id: string) => {
@@ -33,7 +35,14 @@ export default function HomePage() {
   }
 
   return (
-    <main className="portfolio-shell">
+    <>
+      <div className={`site-loader ${isLoading ? "is-visible" : "is-hidden"}`} aria-hidden={!isLoading}>
+        <div className="loader-topline"><span>B. HARISH RAJ</span><span>PORTFOLIO / 2026</span></div>
+        <div className="loader-center"><span className="loader-count">{isLoading ? "00" : "100"}</span><span className="loader-percent">%</span></div>
+        <div className="loader-bar"><span /></div>
+        <p>INITIALISING EXPERIENCE</p>
+      </div>
+      <main className="portfolio-shell">
       <span className="cursor-orb" style={{ transform: `translate3d(${cursor.x}px, ${cursor.y}px, 0)` }} aria-hidden="true" />
       <a className="skip-link" href="#content">Skip to content</a>
 
@@ -128,5 +137,6 @@ export default function HomePage() {
         </div>
       </div>}
     </main>
+    </>
   )
 }
