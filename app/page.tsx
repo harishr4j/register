@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ArrowDownRight, ArrowUpRight, Command, Mail, Github, Linkedin, Instagram } from "lucide-react"
 import { siteData } from "@/lib/site-data"
 
@@ -8,6 +8,25 @@ const toolbox = ["Next.js", "React", "TypeScript", "Tailwind", "Node.js", "Tradi
 
 export default function HomePage() {
   const [paletteOpen, setPaletteOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("top")
+  const [cursor, setCursor] = useState({ x: -100, y: -100 })
+
+  useEffect(() => {
+    const sections = ["top", "about", "work", "contact"]
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && setActiveSection(entry.target.id)),
+      { rootMargin: "-35% 0px -55%" },
+    )
+    sections.forEach((id) => { const section = document.getElementById(id); if (section) observer.observe(section) })
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") { event.preventDefault(); setPaletteOpen(true) }
+      if (event.key === "Escape") setPaletteOpen(false)
+    }
+    const handlePointerMove = (event: PointerEvent) => setCursor({ x: event.clientX, y: event.clientY })
+    window.addEventListener("keydown", handleKeyDown)
+    window.addEventListener("pointermove", handlePointerMove)
+    return () => { observer.disconnect(); window.removeEventListener("keydown", handleKeyDown); window.removeEventListener("pointermove", handlePointerMove) }
+  }, [])
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
@@ -15,14 +34,15 @@ export default function HomePage() {
 
   return (
     <main className="portfolio-shell">
+      <span className="cursor-orb" style={{ transform: `translate3d(${cursor.x}px, ${cursor.y}px, 0)` }} aria-hidden="true" />
       <a className="skip-link" href="#content">Skip to content</a>
 
       <header className="site-nav">
         <a href="#top" className="brand-mark">B. HARISH RAJ</a>
         <nav aria-label="Main navigation" className="nav-links">
-          <button onClick={() => scrollTo("about")}>ABOUT</button>
-          <button onClick={() => scrollTo("work")}>WORK</button>
-          <button onClick={() => scrollTo("contact")}>CONTACT</button>
+          {[["ABOUT", "about"], ["WORK", "work"], ["CONTACT", "contact"]].map(([label, id]) => (
+            <button className={activeSection === id ? "is-active" : ""} onClick={() => scrollTo(id)} key={id}>{label}</button>
+          ))}
         </nav>
         <button className="command-button" onClick={() => setPaletteOpen(true)} aria-label="Open command palette">
           <Command size={13} /> K
@@ -44,7 +64,7 @@ export default function HomePage() {
       </section>
 
       <div id="content">
-        <section id="about" className="content-section about-section" aria-labelledby="about-title">
+        <section id="about" className="content-section about-section reveal" aria-labelledby="about-title">
           <div className="section-kicker">01 / ABOUT</div>
           <div className="section-main">
             <h2 id="about-title">A hybrid mind<br /><em>with range.</em></h2>
@@ -56,7 +76,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="toolbox-section" aria-labelledby="toolbox-title">
+        <section className="toolbox-section reveal" aria-labelledby="toolbox-title">
           <div className="section-kicker">02 / TOOLBOX</div>
           <div className="toolbox-inner">
             <h2 id="toolbox-title">The daily<br /><em>stack.</em></h2>
@@ -66,7 +86,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="work" className="content-section work-section" aria-labelledby="work-title">
+        <section id="work" className="content-section work-section reveal" aria-labelledby="work-title">
           <div className="section-kicker">03 / SELECTED WORK</div>
           <div className="section-main work-heading">
             <h2 id="work-title">Things I’ve<br /><em>shipped.</em></h2>
@@ -84,7 +104,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="contact" className="contact-section" aria-labelledby="contact-title">
+        <section id="contact" className="contact-section reveal" aria-labelledby="contact-title">
           <div className="section-kicker">04 / CONTACT</div>
           <h2 id="contact-title">Let&apos;s make<br /><em>something.</em></h2>
           <a className="contact-email" href={`mailto:${siteData.email}`}>{siteData.email} <ArrowUpRight size={22} /></a>
